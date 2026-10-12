@@ -20,6 +20,7 @@ import { THEME_CONFIGS } from '../data/portfolioData';
 import { usePortfolio } from '../context/PortfolioContext';
 import { ColorTheme, ThemeConfig } from '../types';
 import heroPortrait from '../assets/images/sakshi_hero_portrait_1790060105063.jpg';
+import heroPortraitWebp from '../assets/images/sakshi_hero_portrait_1790060105063.webp';
 
 interface HeroProps {
   onScrollTo: (sectionId: string) => void;
@@ -125,7 +126,7 @@ export default function Hero({
               </div>
               <h1
                 id="hero-name-heading"
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-none"
+                className="text-responsive-5xl font-extrabold tracking-tight text-white leading-none"
               >
                 <span className={`bg-gradient-to-r ${accentGradient} bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(255,255,255,0.15)]`}>
                   Sakshi Kashyap
@@ -137,7 +138,7 @@ export default function Hero({
             <div className="space-y-2">
               <p
                 id="hero-tagline"
-                className="text-lg sm:text-xl md:text-2xl font-bold text-slate-100 tracking-tight"
+                className="text-responsive-xl font-bold text-slate-100 tracking-tight"
               >
                 {PERSONAL_INFO.title}
               </p>
@@ -149,7 +150,7 @@ export default function Hero({
             {/* Engaging Short Intro */}
             <p
               id="hero-short-intro"
-              className="text-sm sm:text-base md:text-lg text-slate-300 font-normal leading-relaxed max-w-xl"
+              className="text-responsive-base text-slate-300 font-normal leading-relaxed max-w-xl"
             >
               Combining modern marketing intelligence with generative AI to build high-converting campaigns, automated video content, responsive web platforms, and interactive digital experiences.
             </p>
@@ -287,13 +288,28 @@ export default function Hero({
               <div className="relative rounded-3xl bg-slate-900/90 border-2 border-white/15 p-3.5 sm:p-4 shadow-2xl backdrop-blur-2xl overflow-hidden">
                 {/* Image Frame */}
                 <div className="relative aspect-[4/4.5] w-full rounded-2xl overflow-hidden bg-slate-950 border border-white/15 shadow-inner">
-                  <img
-                    id="hero-profile-image"
-                    src={heroPortrait}
-                    alt="Sakshi - Digital Marketing with AI Specialist"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  />
+                  <picture>
+                    <source
+                      srcSet={heroPortraitWebp}
+                      type="image/webp"
+                      media="(max-width: 640px)"
+                    />
+                    <source
+                      srcSet={heroPortraitWebp}
+                      type="image/webp"
+                    />
+                    <img
+                      id="hero-profile-image"
+                      src={heroPortrait}
+                      alt="Sakshi - Digital Marketing with AI Specialist"
+                      referrerPolicy="no-referrer"
+                      loading="eager"
+                      fetchPriority="high"
+                      width="400"
+                      height="450"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </picture>
 
                   {/* Gentle gradient overlay for cinematic depth */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />

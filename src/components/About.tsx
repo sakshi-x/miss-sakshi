@@ -3,6 +3,7 @@ import { Award, Rocket, CheckCircle2, User, Camera, ArrowRight, BrainCircuit, Sp
 import { usePortfolio } from '../context/PortfolioContext';
 import { ThemeConfig } from '../types';
 import defaultPhoto from '../assets/images/sakshi_hero_portrait_1790060105063.jpg';
+import defaultPhotoWebp from '../assets/images/sakshi_hero_portrait_1790060105063.webp';
 
 interface AboutProps {
   onScrollTo: (sectionId: string) => void;
@@ -42,7 +43,7 @@ export default function About({ onScrollTo, theme }: AboutProps) {
           </div>
           <h2
             id="about-section-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4"
+            className="text-responsive-3xl font-black tracking-tight text-white mb-4"
           >
             About Sakshi Kashyap
           </h2>
@@ -64,25 +65,39 @@ export default function About({ onScrollTo, theme }: AboutProps) {
                 {/* Photo / Avatar Box */}
                 <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden bg-slate-900 border-2 border-white/[0.12] flex items-center justify-center shadow-inner group/photo">
                   {customPhotoUrl ? (
-                    <img
-                      src={customPhotoUrl}
-                      alt="Sakshi Kashyap - Digital Marketing with AI Specialist portrait"
-                      referrerPolicy="no-referrer"
-                      loading="lazy"
-                      className="w-full h-full object-cover object-top"
-                      onError={() => setCustomPhotoUrl(null)}
-                    />
+                    <picture>
+                      <source
+                        srcSet={customPhotoUrl}
+                        type="image/webp"
+                      />
+                      <img
+                        src={customPhotoUrl}
+                        alt="Sakshi Kashyap - Digital Marketing with AI Specialist portrait"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                        className="w-full h-full object-cover object-top"
+                        onError={() => setCustomPhotoUrl(null)}
+                      />
+                    </picture>
                   ) : (
                     /* Default stylized avatar placeholder */
-                    <div className="w-full h-full flex flex-col items-center justify-center p-4 bg-gradient-to-br from-violet-950/40 via-slate-900 to-cyan-950/30">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-violet-600 to-cyan-400 p-1 flex items-center justify-center mb-3 shadow-lg shadow-violet-600/30">
-                        <div className="w-full h-full rounded-full bg-[#07090e] flex items-center justify-center">
-                          <span className="text-3xl font-extrabold text-white tracking-wider">S</span>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-slate-200">Sakshi's Portrait</span>
-                      <span className="text-[11px] text-violet-400 font-medium">Digital Marketing & AI</span>
-                    </div>
+                    <picture>
+                      <source
+                        srcSet={defaultPhotoWebp}
+                        type="image/webp"
+                      />
+                      <img
+                        src={defaultPhoto}
+                        alt="Sakshi Kashyap - Digital Marketing with AI Specialist portrait"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        width="224"
+                        height="224"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </picture>
                   )}
 
                   {/* Corner Tech Badge */}

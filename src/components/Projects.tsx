@@ -19,6 +19,8 @@ import {
 } from 'lucide-react';
 import { usePortfolio } from '../context/PortfolioContext';
 import { Project, ThemeConfig } from '../types';
+import schoolPortalImg from '../assets/images/project_school_portal_1790317925562.jpg';
+import arcadeGameImg from '../assets/images/project_arcade_game_1790317939580.webp';
 
 interface ProjectsProps {
   theme?: ThemeConfig;
@@ -223,7 +225,7 @@ export default function Projects({ theme }: ProjectsProps) {
           </div>
           <h2
             id="projects-section-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4"
+            className="text-responsive-3xl font-black tracking-tight text-white mb-4"
           >
             AI Projects & Games
           </h2>
@@ -288,13 +290,21 @@ export default function Projects({ theme }: ProjectsProps) {
                     {currentMode === 'image' && project.imageUrl ? (
                       /* High-Resolution Generated Image Showcase */
                       <div className="relative w-full h-44 rounded-xl overflow-hidden border border-white/[0.1] shadow-xl group/img">
-                        <img
-                          src={project.imageUrl}
-                          alt={`${project.title} - ${project.badge} project showcase`}
-                          referrerPolicy="no-referrer"
-                          loading="lazy"
-                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/img:scale-105"
-                        />
+                        <picture>
+                          <source
+                            srcSet={project.id === 'school-website' ? schoolPortalImg : arcadeGameImg}
+                            type="image/webp"
+                          />
+                          <img
+                            src={project.imageUrl}
+                            alt={`${project.title} - ${project.badge} project showcase`}
+                            referrerPolicy="no-referrer"
+                            loading="lazy"
+                            width="400"
+                            height="250"
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover/img:scale-105"
+                          />
+                        </picture>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                         <span className="absolute bottom-2 left-2 text-[10px] font-mono text-cyan-300 bg-black/70 px-2 py-0.5 rounded backdrop-blur-xs">
                           High-Fidelity AI Mockup
@@ -507,12 +517,20 @@ export default function Projects({ theme }: ProjectsProps) {
             {/* Project Image Banner inside Modal */}
             {activeModalProject.imageUrl && (
               <div className="w-full h-48 sm:h-56 rounded-2xl overflow-hidden border border-white/[0.1] relative">
-                <img
-                  src={activeModalProject.imageUrl}
-                  alt={`${activeModalProject.title} - ${activeModalProject.badge} project showcase`}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+                <picture>
+                  <source
+                    srcSet={activeModalProject.id === 'school-website' ? schoolPortalImg : arcadeGameImg}
+                    type="image/webp"
+                  />
+                  <img
+                    src={activeModalProject.imageUrl}
+                    alt={`${activeModalProject.title} - ${activeModalProject.badge} project showcase`}
+                    loading="lazy"
+                    width="600"
+                    height="350"
+                    className="w-full h-full object-cover"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c101c] via-transparent to-transparent opacity-60" />
               </div>
             )}

@@ -1,20 +1,38 @@
 {
-  "name": "student-course-admin-panel",
+  "name": "sakshi-kashyap-ai-portfolio",
   "private": true,
   "version": "1.0.0",
+  "description": "Sakshi Kashyap - Digital Marketing with AI Specialist Portfolio. AI-powered marketing strategies, web development, game development, and AI video creation.",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "seed": "node scripts/seedAdmin.js",
-    "migrate": "node scripts/migrateJsonToSupabase.js",
-    "check": "node scripts/checkSyntax.js",
-    "lint": "node scripts/checkSyntax.js"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "seo:check": "node scripts/seo-check.js"
   },
   "engines": {
     "node": ">=22.12"
+  },
+  "keywords": [
+    "digital-marketing",
+    "ai-specialist",
+    "portfolio",
+    "web-development",
+    "game-development",
+    "ai-video",
+    "prompt-engineering"
+  ],
+  "author": "Sakshi Kashyap <sakshikashyap6857@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://probable-barnacle-bice.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakshi-ai-dev/sakshi-portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/sakshi-ai-dev/sakshi-portfolio/issues"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

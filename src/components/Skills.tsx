@@ -111,7 +111,7 @@ export default function Skills({ theme }: SkillsProps) {
           </div>
           <h2
             id="skills-section-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4"
+            className="text-responsive-3xl font-black tracking-tight text-white mb-4"
           >
             Digital Marketing & AI Skills
           </h2>

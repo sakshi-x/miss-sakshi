@@ -1,15 +1,65 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --color-bg: #07090e;
+    --color-text: #f1f5f9;
+    --color-primary: #8b5cf6;
+    --color-secondary: #06b6d4;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #07090e;
-    color: #f1f5f9;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: var(--font-heading);
     letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: #ffffff;
   }
 }
 
@@ -31,7 +81,8 @@
 
 /* Custom smooth subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -41,10 +92,15 @@
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
   border-radius: 9999px;
+  border: 2px solid #07090e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
+}
+
+::-webkit-scrollbar-corner {
+  background: #07090e;
 }
 
 /* Subtle ambient pulse animation */
@@ -61,5 +117,89 @@
 
 .animate-pulse-glow {
   animation: pulseGlow 7s ease-in-out infinite;
+}
+
+/* Responsive Typography & Spacing */
+@layer utilities {
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
+  }
+  .text-responsive-base {
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  }
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.375rem);
+  }
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
+  }
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);
+  }
+  .text-responsive-3xl {
+    font-size: clamp(1.875rem, 1.5rem + 1.875vw, 3rem);
+  }
+  .text-responsive-4xl {
+    font-size: clamp(2.25rem, 1.75rem + 2.5vw, 4rem);
+  }
+  .text-responsive-5xl {
+    font-size: clamp(3rem, 2rem + 5vw, 5rem);
+  }
+  .text-responsive-6xl {
+    font-size: clamp(3.75rem, 2.5rem + 6.25vw, 6rem);
+  }
+  .text-responsive-7xl {
+    font-size: clamp(4.5rem, 3rem + 7.5vw, 7.5rem);
+  }
+
+  .space-responsive-y > * + * {
+    margin-top: clamp(1rem, 0.875rem + 0.625vw, 1.5rem);
+  }
+
+  .gap-responsive {
+    gap: clamp(1rem, 0.875rem + 0.625vw, 1.5rem);
+  }
+
+  .padding-responsive-x {
+    padding-left: clamp(1rem, 0.875rem + 0.625vw, 1.5rem);
+    padding-right: clamp(1rem, 0.875rem + 0.625vw, 1.5rem);
+  }
+
+  .padding-responsive-y {
+    padding-top: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+    padding-bottom: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .glass-panel,
+  .glass-panel-elevated {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #ffffff;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
 }
 

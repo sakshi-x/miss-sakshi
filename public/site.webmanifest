@@ -1,0 +1,28 @@
+{
+  "name": "Sakshi Kashyap | Digital Marketing with AI Specialist",
+  "short_name": "Sakshi Portfolio",
+  "description": "Certified Digital Marketing with AI Specialist. Building AI-powered marketing strategies, responsive websites, interactive games, and automated video content.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}
