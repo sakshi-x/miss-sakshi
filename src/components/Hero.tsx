@@ -124,6 +124,9 @@ export default function Hero({
                 <span className={`bg-gradient-to-r ${accentGradient} bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(255,255,255,0.15)]`}>
                   {PERSONAL_INFO.name}
                 </span>
+                <span className="block text-responsive-2xl font-bold text-slate-200 mt-1 tracking-tight">
+                  – Digital Marketer
+                </span>
               </h1>
             </div>
 

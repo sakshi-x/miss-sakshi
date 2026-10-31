@@ -84,15 +84,15 @@ export const THEME_CONFIGS: Record<string, ThemeConfig> = {
 export const AI_VIDEO_SHOWCASE_IMG = videoStudioImg;
 
 export const PERSONAL_INFO = {
-  name: 'Sakshi',
-  title: 'Digital Marketing with AI Specialist',
+  name: 'Sakshi Kashyap',
+  title: 'Digital Marketer',
   shortIntro:
     'Bridging creative marketing strategy with cutting-edge AI tools to design responsive web platforms, interactive games, and automated digital campaigns.',
   location: 'Available Globally (Remote)',
   email: 'sakshikashyap6857@gmail.com',
   status: 'Open to AI Marketing & Web Development Projects',
   bioParagraph1:
-    "Hi, I'm Sakshi! I recently completed a specialized certification in Digital Marketing with AI, unlocking new ways to combine modern marketing strategies with rapid artificial intelligence workflows.",
+    "Hi, I'm Sakshi Kashyap! I recently completed a specialized certification in Digital Marketing with AI, unlocking new ways to combine modern marketing strategies with rapid artificial intelligence workflows.",
   bioParagraph2:
     "I have a deep passion for building things hands-on using AI tools — from intelligent responsive websites and interactive canvas games to automated video content pipelines. By harnessing AI as a creative amplifier, I turn concepts into live digital products with speed and precision.",
   highlights: [
@@ -137,7 +137,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/sakshi-digital-marketing-ai',
+    url: 'https://www.linkedin.com/in/sakshi-kashyap-95b71b43a',
     iconName: 'Linkedin',
     label: 'Connect on LinkedIn',
   },
@@ -149,7 +149,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     platform: 'GitHub',
-    url: 'https://github.com/sakshi-ai-dev',
+    url: 'https://github.com/sakshi-x',
     iconName: 'Github',
     label: 'Check Code on GitHub',
   },

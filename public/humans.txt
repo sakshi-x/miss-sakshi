@@ -1,0 +1,8 @@
+# Sakshi Kashyap – Digital Marketer & AI Web Developer
+# This file is part of the portfolio website at https://probable-barnacle-bice.vercel.app
+#
+Name: Sakshi Kashyap
+Role: Digital Marketer (Digital Marketing with AI) & AI Web Developer
+Skills: Website building, Game development, AI video creation, AI tools (ChatGPT, Gemini, Claude, Google AI Studio, Google AI Flow)
+LinkedIn: https://www.linkedin.com/in/sakshi-kashyap-95b71b43a
+GitHub: https://github.com/sakshi-x
