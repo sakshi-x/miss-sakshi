@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS, THEME_CONFIGS } from '../data/portfolioData';
 import { ColorTheme, ThemeConfig } from '../types';
-import heroPortrait from '../assets/images/sakshi_hero_portrait_1790060105063.jpg';
 
 interface HeroProps {
   onScrollTo: (sectionId: string) => void;
@@ -286,8 +285,8 @@ export default function Hero({
                 <div className="relative aspect-[4/4.5] w-full rounded-2xl overflow-hidden bg-slate-950 border border-white/15 shadow-inner">
                   <img
                     id="hero-profile-image"
-                    src={heroPortrait}
-                    alt="Sakshi - Digital Marketing with AI Specialist"
+                    src="/sakshi-kashyap.jpg"
+                    alt="Sakshi Kashyap – Digital Marketer"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />

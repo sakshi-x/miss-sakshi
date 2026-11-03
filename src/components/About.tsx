@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Award, Rocket, CheckCircle2, User, Camera, ArrowRight, BrainCircuit, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { ThemeConfig } from '../types';
-import defaultPhoto from '../assets/images/sakshi_hero_portrait_1790060105063.jpg';
 
 interface AboutProps {
   onScrollTo: (sectionId: string) => void;
@@ -11,7 +10,7 @@ interface AboutProps {
 
 export default function About({ onScrollTo, theme }: AboutProps) {
   // Allow an optional custom image URL or fallback to the elegant portrait
-  const [customPhotoUrl, setCustomPhotoUrl] = useState<string | null>(defaultPhoto);
+  const [customPhotoUrl, setCustomPhotoUrl] = useState<string | null>('/sakshi-kashyap.jpg');
   const [isPhotoEditing, setIsPhotoEditing] = useState(false);
   const [tempUrlInput, setTempUrlInput] = useState('');
 
@@ -64,7 +63,7 @@ export default function About({ onScrollTo, theme }: AboutProps) {
                   {customPhotoUrl ? (
                     <img
                       src={customPhotoUrl}
-                      alt="Sakshi - Digital Marketing with AI Specialist"
+                      alt="Sakshi Kashyap – Digital Marketer"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-top"
                       onError={() => setCustomPhotoUrl(null)}
