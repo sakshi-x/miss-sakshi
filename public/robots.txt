@@ -1,17 +1,14 @@
 User-agent: *
 Allow: /
 
-# Backend and admin panel routes (not for indexing)
-Disallow: /api/
+# Block admin and login routes from search engines
 Disallow: /admin
-Disallow: /dashboard
-Disallow: /portfolio-admin
-Disallow: /login.html
-Disallow: /dashboard.html
-Disallow: /portfolio-login.html
-Disallow: /portfolio-dashboard.html
+Disallow: /admin/login
+Disallow: /admin/dashboard
+Disallow: /login
 
-# Crawl-delay for gentle crawling
-Crawl-delay: 1
+# Crawl-delay for politeness (optional, adjust as needed)
+# Crawl-delay: 1
 
+# Sitemap location
 Sitemap: https://probable-barnacle-bice.vercel.app/sitemap.xml

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sparkles, Send, ArrowRight, Palette } from 'lucide-react';
-import { NAV_ITEMS, PERSONAL_INFO, THEME_CONFIGS } from '../data/portfolioData';
+import { Menu, X, Sparkles, Send, ArrowRight, Palette, Linkedin, Github } from 'lucide-react';
+import { NAV_ITEMS, PERSONAL_INFO, THEME_CONFIGS, SOCIAL_LINKS } from '../data/portfolioData';
 import { ColorTheme, ThemeConfig } from '../types';
 
 interface NavbarProps {
@@ -132,6 +132,27 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
                 ))}
               </div>
             )}
+
+            {/* LinkedIn & GitHub Social Icons */}
+            <div className="flex items-center gap-2">
+              {SOCIAL_LINKS.filter((l) => ['LinkedIn', 'GitHub'].includes(l.platform)).map((link) => (
+                <a
+                  key={link.platform}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.08] hover:border-violet-500/50 text-slate-300 hover:text-white transition-all duration-200 hover:scale-105"
+                  aria-label={link.label}
+                  title={link.label}
+                >
+                  {link.iconName === 'LinkedIn' ? (
+                    <Linkedin className="w-4 h-4" />
+                  ) : (
+                    <Github className="w-4 h-4" />
+                  )}
+                </a>
+              ))}
+            </div>
 
             {/* Let's Talk CTA */}
             <a

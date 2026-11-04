@@ -1,4 +1,4 @@
-import { ArrowUp, Sparkles, Linkedin, Instagram, Github, Mail } from 'lucide-react';
+import { ArrowUp, Sparkles, Linkedin, Github, Mail } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS, NAV_ITEMS } from '../data/portfolioData';
 import { ThemeConfig } from '../types';
 
@@ -15,8 +15,6 @@ export default function Footer({ theme }: FooterProps) {
     switch (iconName) {
       case 'Linkedin':
         return <Linkedin className="w-4 h-4" />;
-      case 'Instagram':
-        return <Instagram className="w-4 h-4" />;
       case 'Github':
         return <Github className="w-4 h-4" />;
       case 'Mail':
