@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Search,
   Sparkles,
-  ExternalLink,
   Eye,
   X,
   Tag,
@@ -104,7 +103,7 @@ export default function Blog({ theme }: BlogProps) {
             ))}
           </div>
 
-          {/* Search Input & Admin Quick Link */}
+          {/* Search Input */}
           <div className="flex items-center gap-3 w-full md:w-auto">
             <div className="relative flex-1 md:w-64">
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -116,14 +115,6 @@ export default function Blog({ theme }: BlogProps) {
                 className="w-full pl-9 pr-3 py-1.5 bg-[#0e1424]/90 border border-white/[0.1] rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/50 transition-all"
               />
             </div>
-            <a
-              href="/admin"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-xs font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap"
-              title="Manage and create posts in Admin Dashboard"
-            >
-              <span>Admin</span>
-              <ExternalLink className="w-3 h-3 text-cyan-400" />
-            </a>
           </div>
         </div>
 
@@ -141,14 +132,8 @@ export default function Blog({ theme }: BlogProps) {
             <p className="text-sm text-slate-400 mb-4">
               {searchQuery
                 ? `No posts matching "${searchQuery}". Try a different keyword.`
-                : 'Check back soon for new articles published from the admin panel.'}
+                : 'Check back soon for new articles and insights.'}
             </p>
-            <a
-              href="/admin"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-violet-600 hover:bg-violet-500 text-white transition-colors"
-            >
-              Write First Post in Admin
-            </a>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

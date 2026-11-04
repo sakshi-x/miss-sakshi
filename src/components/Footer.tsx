@@ -100,11 +100,7 @@ export default function Footer({ theme }: FooterProps) {
           <div className="flex items-center gap-2 text-slate-500">
             <span>© {currentYear} {PERSONAL_INFO.name}. All rights reserved.</span>
             <span className="hidden sm:inline">·</span>
-            <span className="hidden sm:inline">Digital Marketing with AI</span>
-            <span>·</span>
-            <a href="/admin" className="text-slate-500 hover:text-violet-300 transition-colors underline decoration-slate-700 underline-offset-4">
-              Admin Portal
-            </a>
+            <span className="hidden sm:inline">Digital Marketing + AI</span>
           </div>
 
           <button

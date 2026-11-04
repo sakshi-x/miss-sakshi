@@ -85,7 +85,7 @@ export const AI_VIDEO_SHOWCASE_IMG = videoStudioImg;
 
 export const PERSONAL_INFO = {
   name: 'Sakshi Kashyap',
-  title: 'Digital Marketer',
+  title: 'Digital Marketing + AI | Websites, Games & AI Videos',
   shortIntro:
     'Bridging creative marketing strategy with cutting-edge AI tools to design responsive web platforms, interactive games, and automated digital campaigns.',
   location: 'Available Globally (Remote)',

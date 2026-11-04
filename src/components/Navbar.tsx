@@ -146,15 +146,6 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
               <span>Let's Talk</span>
               <Send className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-
-            {/* Admin Portal Direct Link */}
-            <a
-              href="/admin"
-              className="px-2.5 py-1.5 text-xs font-medium text-slate-400 hover:text-white rounded-lg hover:bg-white/[0.06] transition-colors border border-transparent hover:border-white/[0.08]"
-              title="Open Admin Portal"
-            >
-              Admin
-            </a>
           </div>
 
           {/* Mobile Hamburger Button & Theme Swatch */}
@@ -266,12 +257,6 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
             >
               <Send className="w-4 h-4" />
               <span>Contact Sakshi</span>
-            </a>
-            <a
-              href="/admin"
-              className="w-full text-center py-2 rounded-lg text-xs font-medium text-slate-400 hover:text-white bg-white/[0.03] border border-white/[0.06]"
-            >
-              Admin Portal Login →
             </a>
           </div>
         </div>

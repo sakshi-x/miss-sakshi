@@ -123,9 +123,6 @@ export default function Hero({
                 <span className={`bg-gradient-to-r ${accentGradient} bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(255,255,255,0.15)]`}>
                   {PERSONAL_INFO.name}
                 </span>
-                <span className="block text-responsive-2xl font-bold text-slate-200 mt-1 tracking-tight">
-                  – Digital Marketer
-                </span>
               </h1>
             </div>
 
@@ -135,7 +132,7 @@ export default function Hero({
                 id="hero-tagline"
                 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-100 tracking-tight"
               >
-                {PERSONAL_INFO.title}
+                Digital Marketing + AI | Websites, Games & AI Videos
               </p>
               <div
                 className={`h-1.5 w-32 bg-gradient-to-r ${accentGradient} rounded-full shadow-lg`}
@@ -146,9 +143,9 @@ export default function Hero({
             <p
               id="hero-short-intro"
               className="text-sm sm:text-base md:text-lg text-slate-300 font-normal leading-relaxed max-w-xl"
-            >
-              Combining modern marketing intelligence with generative AI to build high-converting campaigns, automated video content, responsive web platforms, and interactive digital experiences.
-            </p>
+              >
+                Combining modern marketing intelligence with generative AI to build high-converting campaigns, automated video content, responsive web platforms, and interactive digital experiences.
+              </p>
 
             {/* Highlighted Official Email Pill with 1-Click Copy & Direct Mail */}
             <div className="pt-1">
@@ -195,7 +192,7 @@ export default function Hero({
                 className={`group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r ${buttonGradient} text-white shadow-xl hover:brightness-110 transition-all duration-300 active:scale-95 cursor-pointer`}
               >
                 <FolderGit2 className="w-4 h-4 transition-transform group-hover:scale-110" />
-                <span>Explore Projects & Games</span>
+                <span>View Projects</span>
                 <ArrowUpRight className="w-4 h-4 opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
 
@@ -205,7 +202,7 @@ export default function Hero({
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm bg-slate-800/90 hover:bg-slate-700/90 text-white border border-white/15 hover:border-white/30 shadow-md backdrop-blur-sm transition-all duration-300 active:scale-95 cursor-pointer"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>Get in Touch</span>
+                <span>Contact Me</span>
               </button>
             </div>
 
@@ -286,7 +283,7 @@ export default function Hero({
                   <img
                     id="hero-profile-image"
                     src="/sakshi-kashyap.jpg"
-                    alt="Sakshi Kashyap – Digital Marketer"
+                    alt="Sakshi Kashyap – Digital Marketing + AI"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
