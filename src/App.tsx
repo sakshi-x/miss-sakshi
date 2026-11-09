@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,6 +9,7 @@ import Projects from './components/Projects';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import SkillsPage from './pages/SkillsPage';
 import { ColorTheme } from './types';
 import { THEME_CONFIGS } from './data/portfolioData';
 
@@ -48,33 +50,41 @@ export default function App() {
   const themeConfig = THEME_CONFIGS[currentTheme] || THEME_CONFIGS.violet;
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col font-sans selection:bg-violet-600 selection:text-white transition-colors duration-500">
-      {/* Sticky Top Navbar with Color Theme Selector */}
-      <Navbar
-        activeSection={activeSection}
-        currentTheme={currentTheme}
-        onThemeChange={setCurrentTheme}
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col font-sans selection:bg-violet-600 selection:text-white transition-colors duration-500">
+            {/* Sticky Top Navbar with Color Theme Selector */}
+            <Navbar
+              activeSection={activeSection}
+              currentTheme={currentTheme}
+              onThemeChange={setCurrentTheme}
+            />
+
+            {/* Main Content Area */}
+            <main className="flex-1">
+              <Hero
+                onScrollTo={handleScrollTo}
+                theme={themeConfig}
+                currentTheme={currentTheme}
+                onThemeChange={setCurrentTheme}
+              />
+              <About onScrollTo={handleScrollTo} theme={themeConfig} />
+              <Skills theme={themeConfig} />
+              <AiCampaignStudio theme={themeConfig} />
+              <Projects theme={themeConfig} />
+              <Blog theme={themeConfig} />
+              <Contact theme={themeConfig} />
+            </main>
+
+            {/* Footer */}
+            <Footer theme={themeConfig} />
+          </div>
+        }
       />
-
-      {/* Main Content Area */}
-      <main className="flex-1">
-        <Hero
-          onScrollTo={handleScrollTo}
-          theme={themeConfig}
-          currentTheme={currentTheme}
-          onThemeChange={setCurrentTheme}
-        />
-        <About onScrollTo={handleScrollTo} theme={themeConfig} />
-        <Skills theme={themeConfig} />
-        <AiCampaignStudio theme={themeConfig} />
-        <Projects theme={themeConfig} />
-        <Blog theme={themeConfig} />
-        <Contact theme={themeConfig} />
-      </main>
-
-      {/* Footer */}
-      <Footer theme={themeConfig} />
-    </div>
+      <Route path="/skills" element={<SkillsPage />} />
+    </Routes>
   );
 }
 

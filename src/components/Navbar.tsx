@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Sparkles, Send, ArrowRight, Palette, Linkedin, Github } from 'lucide-react';
-import { NAV_ITEMS, PERSONAL_INFO, THEME_CONFIGS, SOCIAL_LINKS } from '../data/portfolioData';
+import { PERSONAL_INFO, THEME_CONFIGS, SOCIAL_LINKS } from '../data/portfolioData';
 import { ColorTheme, ThemeConfig } from '../types';
 
 interface NavbarProps {
@@ -22,15 +23,6 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    setShowThemePicker(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const activeThemeObj = THEME_CONFIGS[currentTheme] || THEME_CONFIGS.violet;
 
   return (
@@ -45,12 +37,8 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Zone 1: Single text element wordmark */}
-          <a
-            href="#hero"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#hero');
-            }}
+          <Link
+            to="/"
             id="brand-logo-link"
             className="group flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 rounded-lg p-1"
           >
@@ -72,21 +60,17 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
                 Digital Marketing & AI
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Zone 2: 4-6 clean text navigation links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Main Navigation">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <a
+                <Link
                   key={item.id}
                   id={`nav-link-${item.id}`}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }}
+                  to={item.href}
                   className={`relative px-3.5 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 ${
                     isActive
                       ? 'text-white bg-white/[0.08] shadow-inner font-semibold'
@@ -97,7 +81,7 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
                   {isActive && (
                     <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300 rounded-full shadow-[0_0_8px_rgba(139,92,246,0.6)]" />
                   )}
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -155,18 +139,14 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
             </div>
 
             {/* Let's Talk CTA */}
-            <a
+            <Link
               id="nav-cta-contact-btn"
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#contact');
-              }}
+              to="/contact"
               className={`group inline-flex items-center gap-2 px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-lg bg-gradient-to-r ${activeThemeObj.buttonGradient} hover:brightness-110 text-white shadow-md transition-all duration-200 active:scale-95 cursor-pointer`}
             >
               <span>Let's Talk</span>
               <Send className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button & Theme Swatch */}
@@ -214,14 +194,10 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <a
+                <Link
                   key={item.id}
                   id={`mobile-nav-link-${item.id}`}
-                  href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(item.href);
-                  }}
+                  to={item.href}
                   className={`flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${
                     isActive
                       ? 'text-white bg-violet-600/20 border border-violet-500/30'
@@ -230,7 +206,7 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
                 >
                   <span>{item.label}</span>
                   <ArrowRight className={`w-4 h-4 ${isActive ? 'text-violet-400' : 'text-slate-500'}`} />
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -267,18 +243,14 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
           )}
 
           <div className="pt-2 border-t border-white/[0.08] flex flex-col gap-2">
-            <a
+            <Link
               id="mobile-contact-cta"
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('#contact');
-              }}
+              to="/contact"
               className="w-full flex items-center justify-center gap-2 py-3 rounded-lg text-sm font-semibold bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md active:scale-95"
             >
               <Send className="w-4 h-4" />
               <span>Contact Sakshi</span>
-            </a>
+            </Link>
           </div>
         </div>
       )}
