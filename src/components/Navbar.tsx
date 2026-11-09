@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Sparkles, Send, ArrowRight, Palette, Linkedin, Github } from 'lucide-react';
-import { PERSONAL_INFO, THEME_CONFIGS, SOCIAL_LINKS } from '../data/portfolioData';
+import { PERSONAL_INFO, THEME_CONFIGS, SOCIAL_LINKS, NAV_ITEMS } from '../data/portfolioData';
 import { ColorTheme, ThemeConfig } from '../types';
 
 interface NavbarProps {
