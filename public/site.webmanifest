@@ -1,0 +1,9 @@
+{
+  "name": "Sakshi Kashyap Portfolio",
+  "short_name": "Sakshi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090e",
+  "theme_color": "#7c3aed",
+  "icons": []
+}

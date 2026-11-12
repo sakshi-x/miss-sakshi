@@ -10,6 +10,11 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SkillsPage from './pages/SkillsPage';
+import AboutPage from './pages/AboutPage';
+import ProjectsPage from './pages/ProjectsPage';
+import AiStudioPage from './pages/AiStudioPage';
+import BlogPage from './pages/BlogPage';
+import ContactPage from './pages/ContactPage';
 import { ColorTheme } from './types';
 import { THEME_CONFIGS } from './data/portfolioData';
 
@@ -83,7 +88,13 @@ export default function App() {
           </div>
         }
       />
+      <Route path="/about" element={<AboutPage />} />
       <Route path="/skills" element={<SkillsPage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/ai-studio" element={<AiStudioPage />} />
+      <Route path="/blog" element={<BlogPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="*" element={<AboutPage />} />
     </Routes>
   );
 }
