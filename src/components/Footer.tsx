@@ -78,7 +78,7 @@ export default function Footer({ theme }: FooterProps) {
                   id={`footer-social-${link.platform.toLowerCase()}`}
                   href={link.url}
                   target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
-                  rel={['LinkedIn', 'GitHub'].includes(link.platform) ? 'me noreferrer noopener' : 'noreferrer noopener'}
+                  rel={['LinkedIn', 'GitHub'].includes(link.platform) ? 'me noopener noreferrer' : 'noopener noreferrer'}
                   className="p-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-violet-500/50 text-slate-400 hover:text-white transition-all hover:scale-105"
                   aria-label={link.label}
                   title={link.label}

@@ -117,25 +117,28 @@ export default function Navbar({ activeSection, currentTheme = 'violet', onTheme
               </div>
             )}
 
-            {/* LinkedIn & GitHub Social Icons */}
+            {/* GitHub & LinkedIn Social Icons */}
             <div className="flex items-center gap-2">
-              {SOCIAL_LINKS.filter((l) => ['LinkedIn', 'GitHub'].includes(l.platform)).map((link) => (
-                <a
-                  key={link.platform}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.08] hover:border-violet-500/50 text-slate-300 hover:text-white transition-all duration-200 hover:scale-105"
-                  aria-label={link.label}
-                  title={link.label}
-                >
-                  {link.iconName === 'LinkedIn' ? (
-                    <Linkedin className="w-4 h-4" />
-                  ) : (
-                    <Github className="w-4 h-4" />
-                  )}
-                </a>
-              ))}
+              {[
+                { platform: 'GitHub', Icon: Github },
+                { platform: 'LinkedIn', Icon: Linkedin },
+              ].map(({ platform, Icon }) => {
+                const link = SOCIAL_LINKS.find((l) => l.platform === platform);
+                if (!link) return null;
+                return (
+                  <a
+                    key={platform}
+                    href={link.url}
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                    className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] border border-white/[0.08] hover:border-violet-500/50 text-slate-300 hover:text-white transition-all duration-200 hover:scale-105"
+                    aria-label={link.label}
+                    title={link.label}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                );
+              })}
             </div>
 
             {/* Let's Talk CTA */}
